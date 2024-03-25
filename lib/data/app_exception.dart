@@ -1,12 +1,11 @@
 class AppException implements Exception {
-  final _message;
-  final _prefix;
+  final String? _message;
+  final String? _prefix;
 
   AppException([this._message, this._prefix]);
 
-  String toString() {
-    return "$_prefix$_message";
-  }
+  @override
+  String toString() => "$_prefix$_message";
 }
 
 class FetchDataException extends AppException {
@@ -24,6 +23,5 @@ class UnauthorisedException extends AppException {
 }
 
 class InvalidInputException extends AppException {
-  InvalidInputException([String? message])
-      : super(message, 'Invalid input');
+  InvalidInputException([String? message]) : super(message, 'Invalid input');
 }
