@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mvvm/res/components/round_button.dart';
 import 'package:mvvm/utils/utils.dart';
 
 class LoginView extends StatefulWidget {
@@ -19,6 +20,7 @@ class _LoginViewState extends State<LoginView> {
 
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.sizeOf(context).height * 1;
     return Scaffold(
       appBar: AppBar(
         title: const Text('Login'),
@@ -59,6 +61,9 @@ class _LoginViewState extends State<LoginView> {
               ),
           ),
 
+          SizedBox(height: height * .08,),
+
+          RoundButton(title: "Login", onPressed: (){}),
         ],
       ),
     );
